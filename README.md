@@ -1,4 +1,4 @@
-<h1> Faltas <h1>
+<h1> Faltas </h1>
 > Status do projeto: desenvolvimento
 
 <h1>Informações</h1>
