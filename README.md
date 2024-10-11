@@ -2,7 +2,6 @@
 
 > Status do Projeto: desenvolvimento
 
-<br>
 <h1>Informações:</h1>
 
 <h2>Downloads:</h2>
