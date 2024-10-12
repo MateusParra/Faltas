@@ -30,9 +30,9 @@ class Installer:
             if response.status_code == 200:
                 with open(full_path, "wb") as file:  # wb é formato de escrita em binario, 'w' write, 'b' binarie
                     file.write(response.content)  # o codigo é pego em formato binario por ser um executavel
-                print('Arquivo baixado com sucesso!')
+                print(f'{file_name} downloaded in {path}')
             else:
-                print(f'Falha ao baixar o arquivo, codigo: {response.status_code}')
+                print(f'failed to download, error code: {response.status_code}')
 
     def shortcut(self, file_name, shortcut_name):
         files = os.listdir(self.path)
@@ -61,8 +61,9 @@ class Installer:
         start_menu = '%AppData%\\Microsoft\\Windows\\Start Menu\\Programs'
         desktop = '%USERPROFILE%\\Desktop'
         full_path = os.path.join(path, shortcut_name)
-        os.system(f'copy "{full_path, start_menu}"')
-        os.system(f'move "{full_path, desktop}')
+        os.system(f'copy "{full_path}" "{start_menu}"')
+        os.system(f'move  "{full_path}" "{desktop}"')
+        print(f'{shortcut_name} moved to {start_menu} and {desktop}')
 
 
 if __name__ == '__main__':
@@ -77,4 +78,6 @@ if __name__ == '__main__':
     installer = Installer(path)
     installer.install_file(urls)
     installer.shortcut('update.exe', shortcut_name)
+    input('...')
+
 
