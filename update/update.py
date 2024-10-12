@@ -61,7 +61,7 @@ class Update:
         if not exists:
             return
 
-        os.system(f'start "{os.path.join(self.path, file_name)}"')
+        os.system(f'start "{file_name}"')
 
 
 
