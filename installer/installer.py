@@ -1,5 +1,6 @@
 import os
 import requests
+import time
 
 class Installer:
     def __init__(self, path):
@@ -52,6 +53,7 @@ class Installer:
         desktop = '%USERPROFILE%\\Desktop'
         full_path = os.path.join(path, shortcut_name)
         os.system(f'copy "{full_path}" "{start_menu}"')
+        time.sleep(2.5)
         os.system(f'move  "{full_path}" "{desktop}"')
         print(f'{shortcut_name} moved to {start_menu} and {desktop}')
 
