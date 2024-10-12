@@ -47,5 +47,9 @@ if __name__ == '__main__':
     url = 'https://github.com/MateusParra/Faltas/raw/refs/heads/main/executables/main.exe'
 
     install_file(path, url)
-    shortcut(path, 'faltas.exe', 'Calcular Faltas')
+
+    url = 'https://github.com/MateusParra/Faltas/raw/refs/heads/main/executables/update.exe'
+    install_file(path, url)
+
+    shortcut(path, 'update.exe', 'Faltas')
 
