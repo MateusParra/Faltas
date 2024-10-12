@@ -5,7 +5,7 @@ a = Analysis(
     ['update.py'],
     pathex=[],
     binaries=[],
-    datas=[('version.txt', '.')],
+    datas=[],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
