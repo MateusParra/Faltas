@@ -7,8 +7,7 @@ class Update:
 
     def check_version(self):
         version = []
-        path_version = os.path.join(__file__, 'version.txt')
-        with open(path_version, 'r') as file:
+        with open('version.txt', 'r') as file:
             for line in file:
                 version.append(line)
 
@@ -44,14 +43,25 @@ class Update:
                 with open(os.path.join(self.path, file_name), "wb") as file:
                     file.write(response.content)
 
-                path_version = os.path.join(__file__, 'version.txt')
-                with open(path_version, 'w') as file:
+                with open('version.txt', 'w') as file:
                     new_version = requests.get("https://github.com/MateusParra/Faltas/raw/refs/heads/main/version.txt")
                     new_version = new_version.text
                     print(new_version)
                     file.write(new_version)
             else:
                 print('Falha ao baixar o arquivo!')
+
+    def start_file(self, file_name):
+        files = os.listdir()
+        exists = False
+        for file in files:
+            if file == file_name:
+                exists = True
+
+        if not exists:
+            return
+
+        os.system(f'start "{os.path.join(self.path, file_name)}"')
 
 
 
@@ -60,3 +70,4 @@ if __name__ == '__main__':
 
     update = Update()
     update.update(url)
+    update.start_file('main.exe')

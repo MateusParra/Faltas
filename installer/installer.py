@@ -1,56 +1,80 @@
 import os
 import requests
 
+class Installer:
+    def __init__(self, path):
+        self.path = path
 
-def install_file(path, urls):
-    if os.path.exists(path):
-        os.system(f'del /f /q "{os.path.join(path, '*')}"')
-        os.system(f'rmdir /s /q "{path}"')
-    os.makedirs(path, exist_ok=False)  # Cria a pasta, o exist_ok serve para caso ela exista ele não de erro no terminal
-    # se for True
+    def install_file(self, urls):
+        if os.path.exists(self.path):
+            os.system(f'del /f /q "{os.path.join(self.path, '*')}"')
+            os.system(f'rmdir /s /q "{self.path}"')
+        os.makedirs(self.path, exist_ok=False)  # Cria a pasta, o exist_ok serve para caso ela exista ele não de erro no terminal
+        # se for True
 
-    urls = list(urls)
-    for url in urls:
-        name = url
-        while True:
-            search = name.find('/')
-            if search >= 0:
-                name = name[search + 1:]
+        urls = list(urls)
+        for url in urls:
+            name = url
+            while True:
+                search = name.find('/')
+                if search >= 0:
+                    name = name[search + 1:]
+                else:
+                    break
+
+            file_name = name
+            full_path = os.path.join(self.path, file_name)  # junta o caminho com o nome do arquivo
+
+            response = requests.get(url)
+
+            if response.status_code == 200:
+                with open(full_path, "wb") as file:  # wb é formato de escrita em binario, 'w' write, 'b' binarie
+                    file.write(response.content)  # o codigo é pego em formato binario por ser um executavel
+                print('Arquivo baixado com sucesso!')
             else:
-                break
+                print(f'Falha ao baixar o arquivo, codigo: {response.status_code}')
 
-        file_name = name
-        full_path = os.path.join(path, file_name)  # junta o caminho com o nome do arquivo
+    def shortcut(self, file_name, shortcut_name):
+        files = os.listdir(self.path)
+        exist = False
 
-        response = requests.get(url)
+        for file in files:
+            if file == file_name:
+                exist = True
 
-        if response.status_code == 200:
-            with open(full_path, "wb") as file:  # wb é formato de escrita em binario, 'w' write, 'b' binarie
-                file.write(response.content)  # o codigo é pego em formato binario por ser um executavel
-            print('Arquivo baixado com sucesso!')
-        else:
-            print(f'Falha ao baixar o arquivo, codigo: {response.status_code}')
+        if exist:
+            full_path_file = os.path.join(self.path, file_name)
+            full_path_shortcut = os.path.join(self.path, shortcut_name)
+            os.symlink(full_path_file, full_path_shortcut)
 
-def shortcut(path, file_name, shortcut_name):
-    files = os.listdir(path)
-    exist = False
+    def move_shortcut(self, shortcut_name):
+        files = os.listdir(self.path)
+        exists = False
 
-    for file in files:
-        if file == file_name:
-            exist = True
+        for file in files:
+            if file == shortcut_name:
+                exists = True
 
-    if exist:
-        full_path_file = os.path.join(path, file_name)
-        full_path_shortcut = os.path.join(path, shortcut_name)
-        os.symlink(full_path_file, full_path_shortcut)
+        if not exists:
+            return
+
+        start_menu = '%AppData%\Microsoft\Windows\Start Menu\Programs'
+        desktop = '%USERPROFILE%\Desktop'
+        full_path = os.path.join(path, shortcut_name)
+        os.system(f'copy "{full_path, start_menu}"')
+        os.system(f'move "{full_path, desktop}')
+
 
 if __name__ == '__main__':
     path = 'C:\\Program Files (x86)\\faltas'
     url1 = 'https://github.com/MateusParra/Faltas/raw/refs/heads/main/executables/main.exe'
     url2 = 'https://github.com/MateusParra/Faltas/raw/refs/heads/main/executables/update.exe'
-    urls = [url1, url2]
+    url3 = 'https://github.com/MateusParra/Faltas/raw/refs/heads/main/version.txt'
+    urls = [url1, url2, url3]
 
-    install_file(path, urls)
+    shortcut_name = 'Faltas'
 
-    shortcut(path, 'update.exe', 'Faltas')
+    installer = Installer(path)
+    installer.install_file(urls)
+    installer.shortcut('update.exe', shortcut_name)
 
