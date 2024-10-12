@@ -52,8 +52,9 @@ class Installer:
         start_menu = '%AppData%\\Microsoft\\Windows\\Start Menu\\Programs'
         desktop = '%USERPROFILE%\\Desktop'
         full_path = os.path.join(path, shortcut_name)
-        os.system(f'copy "{full_path}" "{start_menu}"')
+        os.system(f'move "{full_path}" "{start_menu}"')
         time.sleep(2.5)
+        installer.shortcut('update.exe', shortcut_name)
         os.system(f'move  "{full_path}" "{desktop}"')
         print(f'{shortcut_name} moved to {start_menu} and {desktop}')
 
