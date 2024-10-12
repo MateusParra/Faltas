@@ -44,7 +44,7 @@ def shortcut(path, file_name, shortcut_name):
 
 if __name__ == '__main__':
     path = 'C:\\Program Files (x86)\\faltas'
-    url = 'https://github.com/MateusParra/Faltas/raw/refs/heads/main/dist/main.exe'
+    url = 'https://github.com/MateusParra/Faltas/raw/refs/heads/main/executables/main.exe'
 
     install_file(path, url)
     shortcut(path, 'faltas.exe', 'Calcular Faltas')

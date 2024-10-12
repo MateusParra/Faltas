@@ -54,7 +54,7 @@ class Update:
 
 
 if __name__ == '__main__':
-    url = 'https://github.com/MateusParra/Faltas/raw/refs/heads/main/dist/main.exe'
+    url = 'https://github.com/MateusParra/Faltas/raw/refs/heads/main/executables/main.exe'
 
     update = Update()
     update.update(url)
