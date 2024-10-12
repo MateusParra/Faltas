@@ -58,8 +58,8 @@ class Installer:
         if not exists:
             return
 
-        start_menu = '%AppData%\Microsoft\Windows\Start Menu\Programs'
-        desktop = '%USERPROFILE%\Desktop'
+        start_menu = '%AppData%\\Microsoft\\Windows\\Start Menu\\Programs'
+        desktop = '%USERPROFILE%\\Desktop'
         full_path = os.path.join(path, shortcut_name)
         os.system(f'copy "{full_path, start_menu}"')
         os.system(f'move "{full_path, desktop}')
