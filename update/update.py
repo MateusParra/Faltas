@@ -2,12 +2,12 @@ import requests
 import os
 
 class Update:
-    def __init__(self):
-        self.path = os.path.dirname(__file__)
+    def __init__(self, path):
+        self.path = path
 
     def check_version(self):
         version = []
-        with open('version.txt', 'r') as file:
+        with open(os.path.join(self.path, 'version.txt'), 'r') as file:
             for line in file:
                 version.append(line)
 
@@ -43,7 +43,7 @@ class Update:
                 with open(os.path.join(self.path, file_name), "wb") as file:
                     file.write(response.content)
 
-                with open('version.txt', 'w') as file:
+                with open(os.path.join(self.path, 'version.txt'), 'w') as file:
                     new_version = requests.get("https://github.com/MateusParra/Faltas/raw/refs/heads/main/version.txt")
                     new_version = new_version.text
                     print(new_version)
@@ -67,7 +67,8 @@ class Update:
 
 if __name__ == '__main__':
     url = 'https://github.com/MateusParra/Faltas/raw/refs/heads/main/executables/main.exe'
+    path = 'C:\\Program Files (x86)\\faltas'
 
-    update = Update()
+    update = Update(path)
     update.update(url)
     update.start_file('main.exe')
