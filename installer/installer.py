@@ -1,6 +1,5 @@
 import os
 import requests
-import time
 
 class Installer:
     def __init__(self, path):
