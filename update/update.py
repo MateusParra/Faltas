@@ -7,8 +7,9 @@ class Update:
 
     def check_version(self):
         version = []
-        with open('version.txt', 'r') as arquivo:
-            for line in arquivo:
+        path_version = os.path.join(__file__, 'version.txt')
+        with open(path_version, 'r') as file:
+            for line in file:
                 version.append(line)
 
         if len(version) > 1:
@@ -40,14 +41,15 @@ class Update:
             response = requests.get(url)
             if response.status_code == 200:
                 os.system(f'del {os.path.join(self.path, file_name)}')
-                with open(os.path.join(self.path, file_name), "wb") as arquivo:
-                    arquivo.write(response.content)
+                with open(os.path.join(self.path, file_name), "wb") as file:
+                    file.write(response.content)
 
-                with open('version.txt', 'w') as arquivo:
+                path_version = os.path.join(__file__, 'version.txt')
+                with open(path_version, 'w') as file:
                     new_version = requests.get("https://github.com/MateusParra/Faltas/raw/refs/heads/main/version.txt")
                     new_version = new_version.text
                     print(new_version)
-                    arquivo.write(new_version)
+                    file.write(new_version)
             else:
                 print('Falha ao baixar o arquivo!')
 
