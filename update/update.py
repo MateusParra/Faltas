@@ -14,7 +14,7 @@ class Update:
         if len(version) > 1:
             raise ValueError("Multiplas versões!")
         else:
-            version = version[0]
+            version = version[0].strip()
 
         response = requests.get("https://github.com/MateusParra/Faltas/raw/refs/heads/main/version.txt")
 
@@ -22,6 +22,8 @@ class Update:
             new_version = response.text
         else:
             raise ValueError(f"Não foi possivel acessar! -- Codigo: {response.status_code}")
+
+        print(version, new_version)
 
         return version == new_version
 
