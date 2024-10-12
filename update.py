@@ -6,5 +6,5 @@ class Update:
         path = os.path.dirname(__file__)
 
     def check_version(self):
-        response = requests.get("https://github.com/MateusParra/Faltas/raw/refs/heads/desenvolvimento/dist/version.txt")
+        response = requests.get("https://github.com/MateusParra/Faltas/raw/refs/heads/main/version.txt")
         new_version = response.text
