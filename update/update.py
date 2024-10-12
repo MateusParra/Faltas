@@ -23,8 +23,6 @@ class Update:
         else:
             raise ValueError(f"Não foi possivel acessar! -- Codigo: {response.status_code}")
 
-        print(version, new_version)
-
         return version == new_version
 
     def update(self, url):
@@ -41,14 +39,12 @@ class Update:
         if not updated:
             response = requests.get(url)
             if response.status_code == 200:
-                os.system(f'del {os.path.join(self.path, file_name)}')
                 with open(os.path.join(self.path, file_name), "wb") as file:
                     file.write(response.content)
 
                 with open(os.path.join(self.path, 'version.txt'), 'w') as file:
                     new_version = requests.get("https://github.com/MateusParra/Faltas/raw/refs/heads/main/version.txt")
                     new_version = new_version.text
-                    print(new_version)
                     file.write(new_version)
             else:
                 print('Falha ao baixar o arquivo!')
