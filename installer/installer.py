@@ -78,6 +78,7 @@ if __name__ == '__main__':
     installer = Installer(path)
     installer.install_file(urls)
     installer.shortcut('update.exe', shortcut_name)
+    installer.move_shortcut(shortcut_name)
     input('...')
 
 
