@@ -52,15 +52,6 @@ class Update:
                 print('Falha ao baixar o arquivo!')
 
     def start_file(self, file_name):
-        files = os.listdir()
-        exists = False
-        for file in files:
-            if file == file_name:
-                exists = True
-
-        if not exists:
-            return
-
         os.startfile(os.path.join(self.path, file_name))
 
 
