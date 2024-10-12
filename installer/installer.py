@@ -72,6 +72,8 @@ if __name__ == '__main__':
     installer.install_file(urls)
     installer.shortcut('update.exe', shortcut_name)
     installer.move_shortcut(shortcut_name)
+    os.system('taskkill /f /im explorer.exe')
+    os.system('start explorer.exe')
     input('...')
 
 
