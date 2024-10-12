@@ -1,5 +1,7 @@
 import os
 import requests
+import ctypes
+
 
 def install_file(path, url):
     name = url
@@ -13,7 +15,11 @@ def install_file(path, url):
     file_name = name
     full_path = os.path.join(path, file_name)  # junta o caminho com o nome do arquivo
 
-    os.makedirs(path, exist_ok=True)  # Cria a pasta, o exist_ok serve para caso ela exista ele não de erro no terminal
+    if os.path.exists(path):
+        os.system(f'del /f /q "{os.path.join(path, '*')}"')
+        os.system(f'rmdir /s /q "{path}"')
+    os.makedirs(path, exist_ok=False)  # Cria a pasta, o exist_ok serve para caso ela exista ele não de erro no terminal
+    # se for True
 
     response = requests.get(url)
 
@@ -38,6 +44,8 @@ def shortcut(path, file_name, shortcut_name):
         os.symlink(full_path_file, full_path_shortcut)
 
 if __name__ == '__main__':
+    if not ctypes.windll.shell32.IsUserAnAdmin():
+        print('Você não executou como administrador!')
     path = 'C:\\Program Files (x86)\\faltas'
     url = 'https://github.com/MateusParra/Faltas/raw/refs/heads/main/dist/faltas.exe'
 
