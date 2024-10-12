@@ -48,16 +48,6 @@ class Installer:
             os.symlink(full_path_file, full_path_shortcut)
 
     def move_shortcut(self, shortcut_name):
-        files = os.listdir(self.path)
-        exists = False
-
-        for file in files:
-            if file == shortcut_name:
-                exists = True
-
-        if not exists:
-            return
-
         start_menu = '%AppData%\\Microsoft\\Windows\\Start Menu\\Programs'
         desktop = '%USERPROFILE%\\Desktop'
         full_path = os.path.join(path, shortcut_name)
