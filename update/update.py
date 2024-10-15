@@ -11,7 +11,7 @@ class Update:
             root = tk.Tk()
             root.geometry('400x200')
             root.title('Error')
-            root.iconbitmap(os.path.join(os.path.dirname(__file__), 'icon.ico'))
+            root.iconbitmap(os.path.join(os.path.dirname(__file__), 'panico.ico'))
             frame_geral = tk.Frame(root)
             frame_geral.pack()
             title_error = tk.Label(frame_geral, text=text)

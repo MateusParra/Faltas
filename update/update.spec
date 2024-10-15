@@ -5,7 +5,7 @@ a = Analysis(
     ['update.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[('panico.ico', '.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
