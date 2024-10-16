@@ -7,11 +7,11 @@ class Update:
         self.path = path
         self.file_path = os.path.dirname(__file__)
 
-    def error(self, text):
-        if isinstance(text, str):
+    def result(self, title, text):
+        if isinstance(text, str) and isinstance(title, str):
             root = tk.Tk()
             root.geometry('400x200')
-            root.title('Error')
+            root.title(title)
             root.iconbitmap(os.path.join(os.path.dirname(__file__), 'panico.ico'))
             frame_geral = tk.Frame(root)
             frame_geral.pack()
@@ -35,13 +35,13 @@ class Update:
             response = requests.get("https://github.com/MateusParra/Faltas/raw/refs/heads/main/version.txt")
 
             if response.status_code == 200:
-                new_version = response.text
+                new_version = response.text.strip()
             else:
                 new_version = 0
         except:
             new_version = 0
             status_code = 0
-            self.error('Falha no download, verifique sua conexão e tente novamente!')
+            self.result('Error', 'Falha no download, verifique sua conexão e tente novamente!')
             return version == new_version, status_code
 
         return version == new_version, response.status_code
@@ -56,6 +56,7 @@ class Update:
                 break
 
         updated, status_code = self.check_version()
+        print(updated)
 
         try:
             response = requests.get(url)
@@ -69,7 +70,7 @@ class Update:
                         new_version = new_version.text
                         file.write(new_version)
                 else:
-                    self.error(f'Falha ao instalar a atualização, codigo do erro: {status_code if status_code != 200 else response.status_code}')
+                    self.result('Error', f'Falha ao instalar a atualização, codigo do erro: {status_code if status_code != 200 else response.status_code}')
         except:
             return
 
