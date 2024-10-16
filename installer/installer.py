@@ -57,7 +57,7 @@ class Installer:
                 self.error('Falha no download, verifique sua conexão e tente novamente!')
 
     def shortcut(self, url_number, shortcut_name):
-        file_name = self._temp_value[url_number]
+        file_name = self._temp_value[url_number - 1]
         files = os.listdir(self.path)
         exist = False
 
