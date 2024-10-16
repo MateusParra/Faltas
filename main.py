@@ -275,7 +275,7 @@ if __name__ == "__main__":
 
             while True:
                 option = title_button(root, 'Escolha a Opção:', 'Dias para Reprovar', 'Proximas Faltas',
-                                      'Porcentagem', 'Recuperar Dias', 'Total dias a recuperar')
+                                      'Porcentagem')
 
                 match option:
                     case 3:
