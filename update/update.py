@@ -3,8 +3,9 @@ import os
 import tkinter as tk
 
 class Update:
-    def __init__(self):
-        self.path = os.path.dirname(__file__)
+    def __init__(self, path):
+        self.path = path
+        self.file_path = os.path.dirname(__file__)
 
     def error(self, text):
         if isinstance(text, str):
@@ -81,7 +82,8 @@ class Update:
 
 if __name__ == '__main__':
     url = 'https://github.com/MateusParra/Faltas/raw/refs/heads/main/executables/main.exe'
+    path = 'C:\\faltas'
 
-    update = Update()
+    update = Update(path)
     update.update(url)
     update.start_file('main.exe')
