@@ -575,9 +575,9 @@
   ('base_library.zip',
    'C:\\Users\\Administrator\\Documents\\Projetos\\Faltas\\installer\\build\\installer\\base_library.zip',
    'DATA'),
-  ('certifi\\cacert.pem',
-   'C:\\Program Files\\Python312\\Lib\\site-packages\\certifi\\cacert.pem',
-   'DATA'),
   ('certifi\\py.typed',
    'C:\\Program Files\\Python312\\Lib\\site-packages\\certifi\\py.typed',
+   'DATA'),
+  ('certifi\\cacert.pem',
+   'C:\\Program Files\\Python312\\Lib\\site-packages\\certifi\\cacert.pem',
    'DATA')])
