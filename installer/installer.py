@@ -1,7 +1,5 @@
 import os
 import requests
-import tkinter as tk
-import sys
 
 class Installer:
     def __init__(self, path):
@@ -10,17 +8,9 @@ class Installer:
 
     def error(self, text):
         if isinstance(text, str):
-            root = tk.Tk()
-            root.geometry('400x200')
-            root.title('Error')
-            root.iconbitmap(os.path.join(os.path.dirname(__file__), 'icon.ico'))
-            frame_geral = tk.Frame(root)
-            frame_geral.pack()
-            title_error = tk.Label(frame_geral, text=text)
-            title_error.pack(pady=10)
-
-            root.wait_window(root)
-            sys.exit()
+            print(text)
+            input('...')
+            exit()
 
     def install_file(self, url):
         if os.path.exists(self.path):
