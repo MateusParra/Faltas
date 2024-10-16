@@ -6,6 +6,7 @@ import sys
 class Installer:
     def __init__(self, path):
         self.path = path
+        self._temp_value = None
 
     def error(self, text):
         if isinstance(text, str):
@@ -28,6 +29,8 @@ class Installer:
         os.makedirs(self.path, exist_ok=False)  # Cria a pasta, o exist_ok serve para caso ela exista ele não de erro no terminal
         # se for True
 
+        self._temp_value = []
+
         links = list(url)
         for url in links:
             name = url
@@ -36,6 +39,7 @@ class Installer:
                 if search >= 0:
                     name = name[search + 1:]
                 else:
+                    self._temp_value.append(name)
                     break
 
             file_name = name
@@ -52,7 +56,8 @@ class Installer:
             except:
                 self.error('Falha no download, verifique sua conexão e tente novamente!')
 
-    def shortcut(self, file_name, shortcut_name):
+    def shortcut(self, url_number, shortcut_name):
+        file_name = self._temp_value[url_number]
         files = os.listdir(self.path)
         exist = False
 
@@ -64,6 +69,7 @@ class Installer:
             full_path_file = os.path.join(self.path, file_name)
             full_path_shortcut = os.path.join(self.path, shortcut_name)
             os.symlink(full_path_file, full_path_shortcut)
+            installer.move_shortcut(shortcut_name)
 
     def move_shortcut(self, shortcut_name):
         start_menu = '%AppData%\\Microsoft\\Windows\\Start Menu\\Programs'
@@ -77,15 +83,13 @@ if __name__ == '__main__':
     path = 'C:\\faltas'
     url1 = 'https://github.com/MateusParra/Faltas/raw/refs/heads/main/executables/main.exe'
     url2 = 'https://github.com/MateusParra/Faltas/raw/refs/heads/main/executables/update.exe'
-    url3 = 'https://github.com/MateusParra/Faltas/raw/refs/heads/main/version.txt'
-    urls = [url1, url2, url3]
+    urls = [url1, url2]
 
     shortcut_name = 'Faltas'
 
     installer = Installer(path)
     installer.install_file(urls)
-    installer.shortcut('update.exe', shortcut_name)
-    installer.move_shortcut(shortcut_name)
+    installer.shortcut(2, shortcut_name)
     input('...')
 
 
