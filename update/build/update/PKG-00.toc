@@ -35,6 +35,10 @@
    'C:\\Program '
    'Files\\Python312\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_inspect.py',
    'PYSOURCE'),
+  ('pyi_rth_cryptography_openssl',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\rthooks\\pyi_rth_cryptography_openssl.py',
+   'PYSOURCE'),
   ('update',
    'C:\\Users\\Administrator\\Documents\\Projetos\\Faltas\\update\\update.py',
    'PYSOURCE'),
@@ -55,6 +59,14 @@
    'C:\\Program Files\\Python312\\DLLs\\_socket.pyd',
    'EXTENSION'),
   ('_queue.pyd', 'C:\\Program Files\\Python312\\DLLs\\_queue.pyd', 'EXTENSION'),
+  ('_cffi_backend.cp312-win_amd64.pyd',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\_cffi_backend.cp312-win_amd64.pyd',
+   'EXTENSION'),
+  ('cryptography\\hazmat\\bindings\\_rust.pyd',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\bindings\\_rust.pyd',
+   'EXTENSION'),
   ('_ssl.pyd', 'C:\\Program Files\\Python312\\DLLs\\_ssl.pyd', 'EXTENSION'),
   ('charset_normalizer\\md__mypyc.cp312-win_amd64.pyd',
    'C:\\Program '
@@ -70,20 +82,50 @@
   ('libcrypto-3.dll',
    'C:\\Program Files\\Python312\\DLLs\\libcrypto-3.dll',
    'BINARY'),
+  ('python3.dll', 'C:\\Program Files\\Python312\\python3.dll', 'BINARY'),
   ('libssl-3.dll',
    'C:\\Program Files\\Python312\\DLLs\\libssl-3.dll',
    'BINARY'),
-  ('panico.ico',
-   'C:\\Users\\Administrator\\Documents\\Projetos\\Faltas\\update\\panico.ico',
-   'DATA'),
   ('base_library.zip',
    'C:\\Users\\Administrator\\Documents\\Projetos\\Faltas\\update\\build\\update\\base_library.zip',
+   'DATA'),
+  ('certifi\\py.typed',
+   'C:\\Program Files\\Python312\\Lib\\site-packages\\certifi\\py.typed',
    'DATA'),
   ('certifi\\cacert.pem',
    'C:\\Program Files\\Python312\\Lib\\site-packages\\certifi\\cacert.pem',
    'DATA'),
-  ('certifi\\py.typed',
-   'C:\\Program Files\\Python312\\Lib\\site-packages\\certifi\\py.typed',
+  ('cryptography-43.0.3.dist-info\\INSTALLER',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography-43.0.3.dist-info\\INSTALLER',
+   'DATA'),
+  ('cryptography-43.0.3.dist-info\\WHEEL',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography-43.0.3.dist-info\\WHEEL',
+   'DATA'),
+  ('cryptography-43.0.3.dist-info\\license_files\\LICENSE.APACHE',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography-43.0.3.dist-info\\license_files\\LICENSE.APACHE',
+   'DATA'),
+  ('cryptography-43.0.3.dist-info\\license_files\\LICENSE.BSD',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography-43.0.3.dist-info\\license_files\\LICENSE.BSD',
+   'DATA'),
+  ('cryptography-43.0.3.dist-info\\RECORD',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography-43.0.3.dist-info\\RECORD',
+   'DATA'),
+  ('cryptography-43.0.3.dist-info\\license_files\\LICENSE',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography-43.0.3.dist-info\\license_files\\LICENSE',
+   'DATA'),
+  ('cryptography-43.0.3.dist-info\\METADATA',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography-43.0.3.dist-info\\METADATA',
+   'DATA'),
+  ('cryptography-43.0.3.dist-info\\REQUESTED',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography-43.0.3.dist-info\\REQUESTED',
    'DATA')],
  'python312.dll',
  False,

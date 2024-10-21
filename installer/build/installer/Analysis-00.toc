@@ -12,14 +12,16 @@
  {},
  0,
  [],
- [('icon.ico',
-   'C:\\Users\\Administrator\\Documents\\Projetos\\Faltas\\installer\\icon.ico',
-   'DATA')],
+ [],
  '3.12.3 (tags/v3.12.3:f6650f9, Apr  9 2024, 14:05:25) [MSC v.1938 64 bit '
  '(AMD64)]',
  [('pyi_rth_inspect',
    'C:\\Program '
    'Files\\Python312\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_inspect.py',
+   'PYSOURCE'),
+  ('pyi_rth_cryptography_openssl',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\rthooks\\pyi_rth_cryptography_openssl.py',
    'PYSOURCE'),
   ('installer',
    'C:\\Users\\Administrator\\Documents\\Projetos\\Faltas\\installer\\installer.py',
@@ -238,12 +240,12 @@
   ('dis', 'C:\\Program Files\\Python312\\Lib\\dis.py', 'PYMODULE'),
   ('opcode', 'C:\\Program Files\\Python312\\Lib\\opcode.py', 'PYMODULE'),
   ('ast', 'C:\\Program Files\\Python312\\Lib\\ast.py', 'PYMODULE'),
+  ('stringprep',
+   'C:\\Program Files\\Python312\\Lib\\stringprep.py',
+   'PYMODULE'),
   ('_py_abc', 'C:\\Program Files\\Python312\\Lib\\_py_abc.py', 'PYMODULE'),
   ('tracemalloc',
    'C:\\Program Files\\Python312\\Lib\\tracemalloc.py',
-   'PYMODULE'),
-  ('stringprep',
-   'C:\\Program Files\\Python312\\Lib\\stringprep.py',
    'PYMODULE'),
   ('requests',
    'C:\\Program Files\\Python312\\Lib\\site-packages\\requests\\__init__.py',
@@ -461,6 +463,201 @@
   ('urllib3.exceptions',
    'C:\\Program Files\\Python312\\Lib\\site-packages\\urllib3\\exceptions.py',
    'PYMODULE'),
+  ('cryptography',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\__init__.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.bindings.openssl.binding',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\bindings\\openssl\\binding.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.bindings',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\bindings\\__init__.py',
+   'PYMODULE'),
+  ('cryptography.hazmat',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\__init__.py',
+   'PYMODULE'),
+  ('cryptography.exceptions',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\exceptions.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.bindings.openssl._conditional',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\bindings\\openssl\\_conditional.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.bindings.openssl',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\bindings\\openssl\\__init__.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.backends.openssl.backend',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\backends\\openssl\\backend.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.primitives.ciphers.modes',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\primitives\\ciphers\\modes.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.primitives._cipheralgorithm',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\primitives\\_cipheralgorithm.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.primitives.ciphers.algorithms',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\primitives\\ciphers\\algorithms.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.decrepit.ciphers.algorithms',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\decrepit\\ciphers\\algorithms.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.decrepit.ciphers',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\decrepit\\ciphers\\__init__.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.decrepit',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\decrepit\\__init__.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.primitives.ciphers',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\primitives\\ciphers\\__init__.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.primitives.ciphers.base',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\primitives\\ciphers\\base.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.primitives.asymmetric.padding',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\primitives\\asymmetric\\padding.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.primitives.asymmetric.rsa',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\primitives\\asymmetric\\rsa.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.primitives._serialization',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\primitives\\_serialization.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.primitives.asymmetric.utils',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\primitives\\asymmetric\\utils.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.primitives.asymmetric.ec',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\primitives\\asymmetric\\ec.py',
+   'PYMODULE'),
+  ('cryptography.hazmat._oid',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\_oid.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.primitives.asymmetric',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\primitives\\asymmetric\\__init__.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.primitives.asymmetric.dh',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\primitives\\asymmetric\\dh.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.primitives.asymmetric.x25519',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\primitives\\asymmetric\\x25519.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.primitives.asymmetric.x448',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\primitives\\asymmetric\\x448.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.primitives.asymmetric.ed448',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\primitives\\asymmetric\\ed448.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.primitives.asymmetric.ed25519',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\primitives\\asymmetric\\ed25519.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.primitives.asymmetric.dsa',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\primitives\\asymmetric\\dsa.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.primitives._asymmetric',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\primitives\\_asymmetric.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.primitives.hashes',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\primitives\\hashes.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.primitives',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\primitives\\__init__.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.primitives.constant_time',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\primitives\\constant_time.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.primitives.serialization',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\primitives\\serialization\\__init__.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.primitives.serialization.ssh',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\primitives\\serialization\\ssh.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.primitives.serialization.base',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\primitives\\serialization\\base.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.backends.openssl',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\backends\\openssl\\__init__.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.backends',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\backends\\__init__.py',
+   'PYMODULE'),
+  ('cryptography.x509',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\x509\\__init__.py',
+   'PYMODULE'),
+  ('cryptography.x509.oid',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\x509\\oid.py',
+   'PYMODULE'),
+  ('cryptography.x509.name',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\x509\\name.py',
+   'PYMODULE'),
+  ('cryptography.x509.general_name',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\x509\\general_name.py',
+   'PYMODULE'),
+  ('cryptography.x509.extensions',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\x509\\extensions.py',
+   'PYMODULE'),
+  ('cryptography.hazmat.primitives.asymmetric.types',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\primitives\\asymmetric\\types.py',
+   'PYMODULE'),
+  ('cryptography.x509.base',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\x509\\base.py',
+   'PYMODULE'),
+  ('cryptography.x509.verification',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\x509\\verification.py',
+   'PYMODULE'),
+  ('cryptography.x509.certificate_transparency',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\x509\\certificate_transparency.py',
+   'PYMODULE'),
+  ('cryptography.utils',
+   'C:\\Program Files\\Python312\\Lib\\site-packages\\cryptography\\utils.py',
+   'PYMODULE'),
+  ('cryptography.__about__',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\__about__.py',
+   'PYMODULE'),
   ('urllib3.contrib.pyopenssl',
    'C:\\Program '
    'Files\\Python312\\Lib\\site-packages\\urllib3\\contrib\\pyopenssl.py',
@@ -549,6 +746,14 @@
    'C:\\Program Files\\Python312\\DLLs\\_socket.pyd',
    'EXTENSION'),
   ('_queue.pyd', 'C:\\Program Files\\Python312\\DLLs\\_queue.pyd', 'EXTENSION'),
+  ('_cffi_backend.cp312-win_amd64.pyd',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\_cffi_backend.cp312-win_amd64.pyd',
+   'EXTENSION'),
+  ('cryptography\\hazmat\\bindings\\_rust.pyd',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography\\hazmat\\bindings\\_rust.pyd',
+   'EXTENSION'),
   ('_ssl.pyd', 'C:\\Program Files\\Python312\\DLLs\\_ssl.pyd', 'EXTENSION'),
   ('charset_normalizer\\md__mypyc.cp312-win_amd64.pyd',
    'C:\\Program '
@@ -564,20 +769,50 @@
   ('libcrypto-3.dll',
    'C:\\Program Files\\Python312\\DLLs\\libcrypto-3.dll',
    'BINARY'),
+  ('python3.dll', 'C:\\Program Files\\Python312\\python3.dll', 'BINARY'),
   ('libssl-3.dll',
    'C:\\Program Files\\Python312\\DLLs\\libssl-3.dll',
    'BINARY')],
  [],
  [],
- [('icon.ico',
-   'C:\\Users\\Administrator\\Documents\\Projetos\\Faltas\\installer\\icon.ico',
-   'DATA'),
-  ('base_library.zip',
+ [('base_library.zip',
    'C:\\Users\\Administrator\\Documents\\Projetos\\Faltas\\installer\\build\\installer\\base_library.zip',
+   'DATA'),
+  ('certifi\\cacert.pem',
+   'C:\\Program Files\\Python312\\Lib\\site-packages\\certifi\\cacert.pem',
    'DATA'),
   ('certifi\\py.typed',
    'C:\\Program Files\\Python312\\Lib\\site-packages\\certifi\\py.typed',
    'DATA'),
-  ('certifi\\cacert.pem',
-   'C:\\Program Files\\Python312\\Lib\\site-packages\\certifi\\cacert.pem',
+  ('cryptography-43.0.3.dist-info\\INSTALLER',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography-43.0.3.dist-info\\INSTALLER',
+   'DATA'),
+  ('cryptography-43.0.3.dist-info\\license_files\\LICENSE',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography-43.0.3.dist-info\\license_files\\LICENSE',
+   'DATA'),
+  ('cryptography-43.0.3.dist-info\\WHEEL',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography-43.0.3.dist-info\\WHEEL',
+   'DATA'),
+  ('cryptography-43.0.3.dist-info\\license_files\\LICENSE.BSD',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography-43.0.3.dist-info\\license_files\\LICENSE.BSD',
+   'DATA'),
+  ('cryptography-43.0.3.dist-info\\REQUESTED',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography-43.0.3.dist-info\\REQUESTED',
+   'DATA'),
+  ('cryptography-43.0.3.dist-info\\METADATA',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography-43.0.3.dist-info\\METADATA',
+   'DATA'),
+  ('cryptography-43.0.3.dist-info\\RECORD',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography-43.0.3.dist-info\\RECORD',
+   'DATA'),
+  ('cryptography-43.0.3.dist-info\\license_files\\LICENSE.APACHE',
+   'C:\\Program '
+   'Files\\Python312\\Lib\\site-packages\\cryptography-43.0.3.dist-info\\license_files\\LICENSE.APACHE',
    'DATA')])

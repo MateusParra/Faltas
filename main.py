@@ -1,7 +1,8 @@
 import os
 import tkinter as tk
 from cryptography.fernet import Fernet
-import datetime
+from datetime import datetime
+import requests
 
 class CalculaFaltas:
     def __init__(self, aulas, faltas, aulas_total):
@@ -260,6 +261,9 @@ if __name__ == "__main__":
         destroy_if_exists(frame_geral)
 
     def main_script():
+        def binary_line_break(file):
+            file.write(b'\n')
+
         try:
             option = title_button(root, 'Tipo de Estudo:', 'Tecnico', 'Integral')
             match option:
@@ -270,7 +274,56 @@ if __name__ == "__main__":
                 case _:
                     classes = 0
 
-            total_faults, total_classes = entrys(root, 'Total de Faltas:', 'Total de Aulas:')
+            study_type = option
+            current_date = f'{month}/{day}/{year}'
+            total_faults, total_classes = None, None
+
+            try:
+                response = requests.get('https://github.com/MateusParra/Faltas/raw/refs/heads/main/other/config_data.txt')
+                if response.status_code == 200:
+                    key = response.content.strip()
+                    cipher = Fernet(key)
+                    study_type = option
+
+                    txt_name = 'school_attendance.txt'
+                    with open(txt_name, 'a') as file:
+                        file.write('')
+
+                    with open(txt_name, 'rb') as file:
+                        values = [line for line in file if line]
+
+                    for i, _ in enumerate(values):
+                        values[i] = cipher.decrypt(values[i])
+                        values[i] = values[i].decode()
+                        search = values[i].find('=')
+                        values[i] = values[i][search + 2:]
+
+                    if len(values) != 4 or values[0] != current_date or int(values[1]) != int(study_type):
+                        total_faults, total_classes = entrys(root, 'Total de Faltas:', 'Total de Aulas:')
+
+                        text_date = f'date = {current_date}'
+                        text_study_type = f'study_type = {study_type}'
+                        text_total_faults = f'total_faults = {total_faults}'
+                        text_total_classes = f'total_classes = {total_classes}'
+                        encrypted_date = cipher.encrypt(text_date.encode())
+                        encrypted_study_type = cipher.encrypt(text_study_type.encode())
+                        encrypted_total_faults = cipher.encrypt(text_total_faults.encode())
+                        encrypted_total_classes = cipher.encrypt(text_total_classes.encode())
+                        with open(txt_name, 'wb') as file:
+                            file.write(encrypted_date)
+                            binary_line_break(file)
+                            file.write(encrypted_study_type)
+                            binary_line_break(file)
+                            file.write(encrypted_total_faults)
+                            binary_line_break(file)
+                            file.write(encrypted_total_classes)
+                    else:
+                        date = values[0]
+                        type_study = values[1]
+                        total_faults = int(values[2])
+                        total_classes = int(values[3])
+            except:
+                total_faults, total_classes = entrys(root, 'Total de Faltas:', 'Total de Aulas:')
 
             faltas = CalculaFaltas(classes, total_faults, total_classes)
 
@@ -304,6 +357,11 @@ if __name__ == "__main__":
     root.geometry('700x500')
     root.iconbitmap(f'{path}\\panico.ico')
     root.protocol("WM_DELETE_WINDOW", on_closing)
+
+    date = datetime.now()
+    day = date.day
+    month = date.month
+    year = date.year
 
     root.after(100, main_script)
 
