@@ -1,6 +1,7 @@
 import os
 import tkinter as tk
-
+from cryptography.fernet import Fernet
+import datetime
 
 class CalculaFaltas:
     def __init__(self, aulas, faltas, aulas_total):
